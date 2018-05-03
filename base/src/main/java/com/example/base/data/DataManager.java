@@ -2,10 +2,17 @@ package com.example.base.data;
 
 public class DataManager {
 
-    SharedPrefsHelper mSharedPrefsHelper;
+    static SharedPrefsHelper mSharedPrefsHelper;
+    static DataManager mDataManager;
 
     public DataManager(SharedPrefsHelper sharedPrefsHelper){
         mSharedPrefsHelper=sharedPrefsHelper;
+    }
+
+
+    public static DataManager getDataManager(){
+        mDataManager=new DataManager(mSharedPrefsHelper);
+        return mDataManager;
     }
 
     public void clear(){
@@ -28,4 +35,7 @@ public class DataManager {
         return mSharedPrefsHelper.getLoggedInMode();
     }
 
+    public static void init(SharedPrefsHelper sharedPrefsHelper) {
+        mSharedPrefsHelper=sharedPrefsHelper;
+    }
 }
