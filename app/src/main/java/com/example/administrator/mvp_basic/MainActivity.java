@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.base.data.DataManager;
+import com.example.home.HomeActivity;
 import com.example.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements SplashContract.SplashMvpView{
@@ -27,7 +28,9 @@ public class MainActivity extends AppCompatActivity implements SplashContract.Sp
 
     @Override
     public void openMainActivity() {
-        // TODO: 2018/5/3 startHome()
+        Intent intent= HomeActivity.getStartIntent(this);
+        startActivity(intent);
+        finish();
 
     }
 
