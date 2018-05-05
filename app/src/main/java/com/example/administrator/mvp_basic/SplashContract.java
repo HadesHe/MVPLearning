@@ -7,9 +7,13 @@ public interface SplashContract {
 
     interface SplashMvpView extends MVPView{
 
+        void openMainActivity();
+
+        void openLoginActivity();
     }
 
     interface SplashMvpPresenter<V extends SplashMvpView> extends MVPPresenter<V>{
 
+        void decideNextActivity();
     }
 }
