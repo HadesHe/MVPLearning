@@ -9,9 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.base.data.DataManager;
 import com.example.base.utils.CommonUtils;
 
+@Route(path = "/login/LoginActivity")
 public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView {
 
     private LoginContract.LoginPresenter<LoginContract.LoginView> loginPresenter;
@@ -72,6 +75,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     public void openMainActivity() {
 // TODO: 2018/5/3 start home
+
+        ARouter.getInstance().build("/app/MainActivity").navigation();
+        finish();
     }
 
     public static Intent getStartIntent(Context context) {

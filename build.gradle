@@ -25,3 +25,21 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+
+    applicationId="com.example.administrator.mvp_basic"
+    compileSdkVersion=27
+    minSdkVersion=15
+    targetSdkVersion=27
+    versionCode=1
+    versionName="1.0"
+    constraintlayoutVersion="1.1.0"
+    appcompatV7Version="27.1.1"
+
+    junitVersion="4.12"
+    runnerVersion="1.0.2"
+    espressocoreVersion="3.0.2"
+    arouteApiVersion="1.3.1"
+    arouteCompilerVersion="1.1.4"
+}

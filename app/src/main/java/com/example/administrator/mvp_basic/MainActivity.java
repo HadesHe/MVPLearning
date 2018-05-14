@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.base.data.DataManager;
 import com.example.home.HomeActivity;
 import com.example.login.LoginActivity;
-
+@Route(path = "/app/MainActivity")
 public class MainActivity extends AppCompatActivity implements SplashContract.SplashMvpView{
 
     private SplashPresenter mSplashPresenter;
@@ -28,16 +30,24 @@ public class MainActivity extends AppCompatActivity implements SplashContract.Sp
 
     @Override
     public void openMainActivity() {
-        Intent intent= HomeActivity.getStartIntent(this);
-        startActivity(intent);
+        // TODO: 2018/5/14 startHomeActivity
+//        Intent intent= HomeActivity.getStartIntent(this);
+//        startActivity(intent);
+//        finish();
+
+        ARouter.getInstance().build("/home/HomeActivity").navigation();
         finish();
 
     }
 
     @Override
     public void openLoginActivity() {
-        Intent intent= LoginActivity.getStartIntent(this);
-        startActivity(intent);
+        // TODO: 2018/5/14 startLoginActivity
+//        Intent intent= LoginActivity.getStartIntent(this);
+//        startActivity(intent);
+//        finish();
+
+        ARouter.getInstance().build("/login/LoginActivity").navigation();
         finish();
     }
 }
